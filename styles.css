@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[data-app-container] {
+    background-color: #333;
+    color: #eee;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    display: flex;
+    position: top;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+    border: gold 3px solid;
+
+}
+main {
+    flex: 1;
+    border: blue 3px solid;
+
+}
+
+main menu {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: silver 3px solid;
+}
+
+[data-card] {
+    border: rgb(184, 34, 34) 3px solid;
+    height: 50px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+footer {
+    display: flex;
+    position: bottom;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+    border: coral 3px solid;
+}
