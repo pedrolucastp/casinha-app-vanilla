@@ -5,10 +5,10 @@
 }
 
 [data-app-container] {
-    background-color: #333;
+    background-color: #fc5296;
+background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%); 
     color: #eee;
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
 }
@@ -16,52 +16,72 @@
 header {
     display: flex;
     position: top;
+    padding-top: 20px;
+    margin: 10px;
     min-height: 100px;
     align-items: center;
     justify-content: center;
-    border: gold 3px solid;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
 }
 
 menu {
     display: flex;
-    height: 50px;
+    height: 70px;
     align-items: center;
-    justify-content: center;
-    border: silver 3px solid;
+    justify-content: space-evenly;
+    padding: 5px;
+    margin: 10px;
+
+}
+
+menu > button {
+    height: 50px;
+    width: 120px;
+    border-radius: 7px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    border: blue 3px solid;
 }
 
-[data-card-board] {
-    height: 500px;
-    border: rgb(184, 34, 34) 3px solid;
-    border-radius: 7px;
 
-    padding: 5px;
+[data-card-board] {
+    height:500px;
+    border-radius: 7px;
+    padding: 10px;
     margin: 10px;
+    
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 [data-card-layout] {
-    padding: 20px;
-    margin: 10px;
-    border: rgb(41, 185, 12) 3px solid;
+    padding: 5px;
+    margin: 5px;
+    border: steelblue 3px solid;
     border-radius: 7px;
+    height: 70px;
+    width: 300px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
 footer {
     display: flex;
-    position: bottom;
-    min-height: 100px;
+    height: 50px;
     align-items: center;
     justify-content: center;
-    border: coral 3px solid;
 }
+

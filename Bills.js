@@ -1,27 +1,31 @@
 const bills = [
   {
-    billName: "Aluguel",
-    billPrice: "R$ 1000,00",
-    
+    title: "Aluguel",
+    price: "R$ 1000,00",
+    description: "lorem5",
   },
 
   {
-    billName: "Luz",
-    billPrice: "R$ 160,00",
+    title: "Luz",
+    price: "R$ 160,00",
+    description: "lorem5",
   },
 
   {
-    billName: "Água",
-    billPrice: "R$ 150,00",
+    title: "Água",
+    price: "R$ 150,00",
+    description: "lorem5",
   },
 
   {
-    billName: "Internet",
-    billPrice: "R$ 89,00",
+    title: "Internet",
+    price: "R$ 89,00",
+    description: "lorem5",
   },
   {
-    billName: "Poda",
-    billPrice: "R$ 100,00",
+    title: "Poda",
+    price: "R$ 100,00",
+    description: "lorem5",
   },
 ];
 
