@@ -1,11 +1,18 @@
 import bills from "./Bills.js";
+import shoppinglist from "./ShoppingList.js"
 console.log("Casinha App");
+
+
+console.log("bills", bills);
+console.log("shoppinglist", shoppinglist);
 
 // criar uma função que recebe uma lista (array) 
 //  a serem convertidos para elementos (objetos)
 // e tranforme os elemtneos em algo visual
 
-bills.forEach((card) => {
+const list = shoppinglist
+
+list.forEach((card) => {
     const cardBoard = document.querySelector("[data-card-board]");
     const cardInfo = document.createElement("BUTTON");
     cardInfo.setAttribute("data-card-layout", "");
