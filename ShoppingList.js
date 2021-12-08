@@ -1,7 +1,8 @@
 const shopping = [{
-        title: "Aluguel",
-        price: "R$ 1000,00",
-        description: "Nov 2021",
+        title: "Aruanda",
+        price: "R$ 20,00",
+        description: "2 uni",
+        id: "Varanda"
     },
 
     {

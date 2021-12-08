@@ -1,13 +1,14 @@
 const bills = [{
         title: "Aluguel",
         price: "R$ 1000,00",
-        description: "lorem5",
+        description: "Nov 2021",
     },
 
     {
         title: "Luz",
-        price: "R$ 160,00",
-        description: "lorem5",
+        price: "R$ 226,14",
+        description: "Nov 2021",
+        id: ""
     },
 
     {
