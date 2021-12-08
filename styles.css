@@ -11,7 +11,6 @@
 
     display: flex;
     flex-direction: column;
-
 }
 
 header {
@@ -21,14 +20,6 @@ header {
     align-items: center;
     justify-content: center;
     border: gold 3px solid;
-    
-}
-main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    border: blue 3px solid;
-    
 }
 
 menu {
@@ -39,16 +30,31 @@ menu {
     border: silver 3px solid;
 }
 
-[data-card-container] {
-    height: 100px;
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: blue 3px solid;
+}
+
+[data-card-board] {
+    height: 500px;
     border: rgb(184, 34, 34) 3px solid;
     border-radius: 7px;
 
     padding: 5px;
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+[data-card-layout] {
+    padding: 20px;
+    margin: 10px;
+    border: rgb(41, 185, 12) 3px solid;
+    border-radius: 7px;
 }
 
 footer {
