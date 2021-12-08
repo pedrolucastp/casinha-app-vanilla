@@ -1,12 +1,8 @@
 const bills = [
   {
-    billName: "Poda",
-    billPrice: "R$ 100,00",
-  },
-
-  {
     billName: "Aluguel",
     billPrice: "R$ 1000,00",
+    
   },
 
   {
@@ -23,5 +19,10 @@ const bills = [
     billName: "Internet",
     billPrice: "R$ 89,00",
   },
+  {
+    billName: "Poda",
+    billPrice: "R$ 100,00",
+  },
 ];
+
 export default bills;

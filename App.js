@@ -7,14 +7,25 @@ console.log(bills);
 //  a serem convertidos para elementos (objetos)
 // e tranforme os elemtneos em algo visual
 
-function newCard(list) {
-  const cardTemplate = document.querySelector("[data-card-template]");
-  const cardContainer = cardTemplate.content.cloneNode(true);
-  const cardContainer = document.querySelector("[data-card-info]");
+function setCard(list) {
+  const cardContainer = document.querySelector("[data-card-container]");
+  
+  list.forEach(card => {
+    let cardInfo = document.createElement('section');
+    const cardTitle = document.createElement("h2");
+    const cardSubtitle = document.createElement("h3");
+    const cardDescription = document.createElement("p");
 
-  list.forEach((card) => {
-    console.log()
+    cardTitle.innerText = card.billName;
+    cardSubtitle.innerText = card.billPrice;
+    cardDescription.innerText = card.billDescription;
+
+    cardInfo.appendChild(cardTitle);
+    cardInfo.appendChild(cardSubtitle);
+    cardInfo.appendChild(cardDescription);
+
+    cardContainer.appendChild(cardInfo);
   });
 }
 
-newCard(bills);
+setCard(bills);
