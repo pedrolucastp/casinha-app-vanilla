@@ -1,41 +1,57 @@
 import bills from "./Bills.js";
-import shoppinglist from "./ShoppingList.js";
+import shoppingList from "./ShoppingList.js";
 console.log("Casinha App");
 
-console.log("bills", bills);
-console.log("shoppinglist", shoppinglist);
+const sections = [
+        { name: "bills", value: bills },
+        { name: "shoppingList", value: shoppingList },
+        { name: "mercado", value: [] },
+    ]
+    // Criar os botoes dinamicamente com os diferentes segmentos de um array
+function setButtons(lists) {
+    lists.forEach((list) => {
+        const menuContainer = document.querySelector("[data-menu-button]");
+        const button = document.createElement("BUTTON");
+        button.setAttribute("id", list.name);
+        button.innerText = list.name;
+
+
+        button.onclick = () => setCard(list.value)
+
+        menuContainer.appendChild(button);
+    });
+}
+setButtons(sections);
+
+
+// Conectar os botoes ao DOM dinamicamente 
 
 // criar uma função que recebe uma lista (array)
 //  a serem convertidos para elementos (objetos)
 // e tranforme os elemtneos em algo visual
 
-function setButtons() {
-
-    const button = document.querySelector("[data-menu-button-1]");
-    button.innerText = "Bills"
-    button.addEventListener(
-        "click", setCard(bills));
-}
-
-setButtons()
-
 function setCard(list) {
+    const cardBoard = document.querySelector("[data-card-board]");
+    cardBoard.innerText = ""
     list.forEach((card) => {
-        const cardBoard = document.querySelector("[data-card-board]");
         const cardInfo = document.createElement("BUTTON");
         cardInfo.setAttribute("data-card-layout", "");
+
         const cardTitle = document.createElement("H2");
-        cardTitle.innerText = card.title;
-        cardInfo.appendChild(cardTitle);
         const cardPrice = document.createElement("H3");
-        cardPrice.innerText = card.price;
-        cardInfo.appendChild(cardPrice);
         const cardDescription = document.createElement("P");
+
+        cardTitle.innerText = card.title;
+        cardPrice.innerText = card.price;
         cardDescription.innerText = card.description;
+
+        cardInfo.appendChild(cardTitle);
+        cardInfo.appendChild(cardPrice);
         cardInfo.appendChild(cardDescription);
+
         cardBoard.appendChild(cardInfo);
         return;
     });
 }
 
-setCard(bills);
+// setCard(shoppingList)

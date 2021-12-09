@@ -1,4 +1,4 @@
-const shoppinglist = [{
+const shoppingList = [{
         title: "Lampadas",
         price: "R$ 150,00",
         description: "8 uni",
@@ -19,4 +19,4 @@ const shoppinglist = [{
     },
 ];
 
-export default shoppinglist;
+export default shoppingList;

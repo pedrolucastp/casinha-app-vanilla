@@ -17,7 +17,7 @@ header {
     display: flex;
     position: top;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     height: 100px;
     align-items: center;
     justify-content: center;
@@ -27,23 +27,20 @@ header {
 
 menu {
     display: flex;
-    flex-wrap: wrap;
-    height: 50px;
+    height: 150px;
     align-items: center;
     justify-content: space-evenly;
-    padding: 5px;
-    margin: 5px;
     cursor: pointer;
 }
 
 menu>button {
-    background-color: steelblue;
-    height: 40px;
-    width: 120px;
-    border-radius: 7px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    background-color: rgb(150, 194, 230);
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
 }
 
 main {
