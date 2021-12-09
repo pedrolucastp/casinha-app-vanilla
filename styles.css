@@ -69,7 +69,7 @@ main {
     /* border: honeydew 2px solid; */
     border-radius: 7px;
     margin: 20px;
-    padding: 20px;
+    padding: 10px 10px;
     width: 90%;
     height: 90%;
     display: flex;

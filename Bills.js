@@ -27,41 +27,6 @@ const bills = [{
         price: "R$ 100,00",
         description: "lorem5",
     },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
-    {
-        title: "Poda",
-        price: "R$ 100,00",
-        description: "lorem5",
-    },
 ];
 
 export default bills;
