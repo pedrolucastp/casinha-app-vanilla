@@ -3,28 +3,24 @@ import shoppingList from "./ShoppingList.js";
 console.log("Casinha App");
 
 const sections = [
-        { name: "bills", value: bills },
-        { name: "shoppingList", value: shoppingList },
-        { name: "mercado", value: [] },
-    ]
-    // Criar os botoes dinamicamente com os diferentes segmentos de um array
+    { name: "Contas", value: bills },
+    { name: "Compras", value: shoppingList },
+    { name: "Outros", value: [] },
+];
+// Criar os botoes dinamicamente com os diferentes segmentos de um array
+// Conectar os botoes ao DOM dinamicamente
 function setButtons(lists) {
     lists.forEach((list) => {
         const menuContainer = document.querySelector("[data-menu-button]");
         const button = document.createElement("BUTTON");
-        button.setAttribute("id", list.name);
         button.innerText = list.name;
-
-
-        button.onclick = () => setCard(list.value)
+        button.setAttribute("id", list.name);
+        button.onclick = () => setCard(list.value);
 
         menuContainer.appendChild(button);
     });
 }
 setButtons(sections);
-
-
-// Conectar os botoes ao DOM dinamicamente 
 
 // criar uma função que recebe uma lista (array)
 //  a serem convertidos para elementos (objetos)
@@ -32,7 +28,7 @@ setButtons(sections);
 
 function setCard(list) {
     const cardBoard = document.querySelector("[data-card-board]");
-    cardBoard.innerText = ""
+    cardBoard.innerText = "";
     list.forEach((card) => {
         const cardInfo = document.createElement("BUTTON");
         cardInfo.setAttribute("data-card-layout", "");

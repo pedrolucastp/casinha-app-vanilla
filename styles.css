@@ -11,32 +11,42 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 header {
     display: flex;
-    position: top;
-    padding: 10px;
-    margin-top: 15px;
+    /* padding: 5px; */
+    /* margin-top: 15px; */
     height: 100px;
     align-items: center;
     justify-content: center;
     font-family: 'Bebas Neue', cursive;
-    font-size: 2.5rem;
+    font-size: 25px;
 }
 
 menu {
     display: flex;
-    height: 150px;
+    height: 100px;
+    width: 100%;
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
 }
 
-menu>button {
+[data-menu-button] {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+[data-menu-button] button {
     background-color: rgb(150, 194, 230);
     height: 80px;
     width: 80px;
+    /* margin: 0 10px; */
+    border: #eee 3px solid;
     border-radius: 10px;
     word-wrap: break-word;
     font-size: 16px;
@@ -46,14 +56,22 @@ menu>button {
 main {
     display: flex;
     flex-direction: column;
-    height: 612px;
+    justify-content: center;
+    align-items: center;
+    /* border: honeydew 3px solid; */
+    border-radius: 7px;
+    width: 95%;
+    height: 562px;
 }
 
 [data-card-board] {
-    /* height: 100%; */
+    flex: 1;
+    /* border: honeydew 2px solid; */
     border-radius: 7px;
-    padding: 10px;
-    margin: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,11 +84,32 @@ main {
     margin: 5px;
     border: steelblue 1px solid;
     border-radius: 7px;
-    min-height: 70px;
-    width: 300px;
+    min-height: 100px;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: dimgray -7px 5px 3px;
+}
+
+[data-menu-card] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+[data-menu-card] p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    border: #eee 3px solid;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
 }
 
 footer {
