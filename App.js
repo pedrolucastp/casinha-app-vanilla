@@ -6,7 +6,8 @@ console.log("Casinha App");
 document.querySelector("[data-theme-changer]").onclick = function(e) {
     if (e) {
         document.body.style.backgroundColor = "#0cbaba";
-        document.body.style.backgroundImage = "linear-gradient(315deg, #0cbaba 0%, #380036 74%)";
+        document.body.style.backgroundImage =
+            "linear-gradient(315deg, #0cbaba 0%, #380036 74%)";
         return;
     }
 };
@@ -59,15 +60,28 @@ function setCard(list) {
     });
 }
 
-// adicionar novo card a lista atual
+// adicionar novo lista
 
 document.querySelector("[data-new-favorite]").onclick = () => {
-    console.log('new list')
+    console.log("new list");
     const newFavorite = {
-        name: prompt("create new favorite"),
+        name: prompt("name new favorite"),
         value: [],
-    }
-    favorites.push(newFavorite)
-    setButton(favorites)
-    return
+    };
+    favorites.push(newFavorite);
+    setButton(favorites);
+    return;
+};
+// remover a lista atual
+
+const newListFavorites = favorites
+document.querySelector("[data-remove-favorite]").onclick = () => {
+    console.log("remove list");
+    const removeFavorite = prompt("name remove favorite");
+
+    const filteredFavorites = newListFavorites.filter(function(el) {
+        return el.name !== removeFavorite;
+    });
+
+    setButton(filteredFavorites);
 };

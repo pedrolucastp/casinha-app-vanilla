@@ -51,12 +51,7 @@ const shoppingList = [{
 let favorites = [
     { name: "Contas", value: bills },
     { name: "Compras", value: shoppingList },
-    { name: "Contas", value: bills },
-    { name: "Compras", value: shoppingList },
-    { name: "Contas", value: bills },
-    { name: "Compras", value: shoppingList },
-    { name: "Contas", value: bills },
-    { name: "Compras", value: shoppingList },
+    { name: "Outro", value: [] },
 ];
 
 export default favorites
