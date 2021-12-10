@@ -1,12 +1,6 @@
 :root {
     --background-color: #fc5296;
     --background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
-    --midnight-bc: #e020a7;
-    --midnight-bi: linear-gradient(326deg, #e020a7 0%, #5f0a87 74%);
-    --forabolsonaro-bc: #7f5a83;
-    --forabolsonaro-bi: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
-    --globalwarming-bc: #20bf55;
-    --globalwarming-bi: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
 }
 
 * {
@@ -17,7 +11,7 @@
 
 body {
     background-color: var(--background-color);
-    /* background-image: var(--background-image); */
+    background-image: var(--background-image);
     color: #eee;
 }
 
@@ -82,7 +76,7 @@ main {
 
 [data-card-board] {
     height: 100%;
-    border: honeydew 2px solid;
+    /* border: honeydew 2px solid; */
     border-radius: 7px;
     margin: 20px;
     padding: 10px 10px;
