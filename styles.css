@@ -36,25 +36,27 @@ header {
 
 menu {
     display: flex;
-    height: 100px;
-    width: 100%;
+    max-height: 100px;
+    width: 90%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     cursor: pointer;
+    overflow-x: scroll;
 }
 
-[data-menu-button] {
+[data-favorite-container] {
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 10px;
+    margin: 10px;
 }
 
-[data-menu-button] button {
+[data-favorite-container] button {
     background-color: rgb(150, 194, 230);
-    height: 80px;
-    width: 80px;
-    /* margin: 0 10px; */
+    min-height: 80px;
+    min-width: 80px;
+    margin: 0 10px;
     border: #eee 3px solid;
     border-radius: 10px;
     word-wrap: break-word;
@@ -110,7 +112,7 @@ main {
     gap: 10px;
 }
 
-[data-menu-card] p {
+[data-new-favorite] {
     display: flex;
     align-items: center;
     justify-content: center;

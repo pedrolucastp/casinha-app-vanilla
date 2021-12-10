@@ -11,13 +11,13 @@ document.querySelector("[data-theme-changer]").onclick = function(e) {
     }
 };
 
-
 // Criar os botoes dinamicamente com os diferentes segmentos de um array
 // Conectar os botoes ao DOM dinamicamente
 
-function setButtons(lists) {
+function setButton(lists) {
+    const favoriteContainer = document.querySelector("[data-favorite-container]");
+    favoriteContainer.innerText = "";
     lists.forEach((list) => {
-        const menuContainer = document.querySelector("[data-menu-button]");
         const button = document.createElement("BUTTON");
         button.innerText = list.name;
         button.setAttribute("id", list.name);
@@ -25,10 +25,11 @@ function setButtons(lists) {
             return setCard(list.value);
         };
 
-        menuContainer.appendChild(button);
+        favoriteContainer.appendChild(button);
     });
 }
-setButtons(favorites);
+
+setButton(favorites);
 
 // criar uma função que recebe uma lista (array)
 //  a serem convertidos para elementos (objetos)
@@ -57,3 +58,16 @@ function setCard(list) {
         return;
     });
 }
+
+// adicionar novo card a lista atual
+
+document.querySelector("[data-new-favorite]").onclick = () => {
+    console.log('new list')
+    const newFavorite = {
+        name: prompt("create new favorite"),
+        value: [],
+    }
+    favorites.push(newFavorite)
+    setButton(favorites)
+    return
+};
