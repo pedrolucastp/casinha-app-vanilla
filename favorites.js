@@ -27,6 +27,11 @@ const bills = [{
         price: "R$ 100,00",
         description: "lorem5",
     },
+    {
+        title: "Poda",
+        price: "R$ 100,00",
+        description: "lorem5",
+    },
 ];
 
 const shoppingList = [{
@@ -35,13 +40,6 @@ const shoppingList = [{
         description: "8 uni",
         id: "Geral",
     },
-    {
-        title: "Aruanda",
-        price: "R$ 20,00",
-        description: "2 uni",
-        id: "Varanda",
-    },
-
     {
         title: "Espelho",
         price: "R$ 300,00",
