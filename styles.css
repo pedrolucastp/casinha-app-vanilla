@@ -48,6 +48,7 @@ menu {
     align-items: center;
     justify-content: center;
     overflow-x: scroll;
+    flex-direction: column;
 }
 
 [data-favorite-container] {
