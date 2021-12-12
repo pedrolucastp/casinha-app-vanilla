@@ -7,13 +7,42 @@ document.querySelector("[data-theme-changer]").onclick = function(e) {
     if (e) {
         document.body.style.backgroundColor = "#0cbaba";
         document.body.style.backgroundImage =
-            "linear-gradient(315deg, #0cbaba 0%, #380036 74%)";
+            "linear-gradient(315de g, #0cbaba 0%, #380036 74%)";
         return;
     }
 };
 
-// Criar os botoes dinamicamente com os diferentes segmentos de um array
+let newListFavorites = favorites;
+console.log(newListFavorites)
+
+// adicionar novo lista
+document.querySelector("[data-new-favorite]").onclick = () => {
+    console.log("new list");
+    const newFavorite = {
+        name: prompt("name new favorite"),
+        value: [],
+    };
+    newListFavorites.push(newFavorite);
+    setButton(newListFavorites);
+    return;
+};
+// remover a lista atual
+
+document.querySelector("[data-remove-favorite]").onclick = () => {
+    console.log("remove list");
+    const removeFavorite = prompt("name remove favorite");
+
+    const filteredFavorites = newListFavorites.filter(function(el) {
+        return el.name !== removeFavorite;
+    });
+    newListFavorites = filteredFavorites;
+    setButton(newListFavorites);
+};
+
+
+// Criar os botoes de favoritos dinamicamente com os diferentes segmentos de um array
 // Conectar os botoes ao DOM dinamicamente
+
 
 function setButton(lists) {
     const favoriteContainer = document.querySelector("[data-favorite-container]");
@@ -30,18 +59,19 @@ function setButton(lists) {
     });
 }
 
-setButton(favorites);
+setButton(newListFavorites);
 
-// criar uma função que recebe uma lista (array)
 //  a serem convertidos para elementos (objetos)
-// e tranforme os elemtneos em algo visual
+// criar uma função que recebe uma lista (array)
+// e tranforme os elemtneos em algo visual (cards)
 
 function setCard(list) {
     const cardBoard = document.querySelector("[data-card-board]");
     cardBoard.innerText = "";
+    cardBoard.setAttribute("data-current-list", list.name)
+
     list.forEach((card) => {
         const cardInfo = document.createElement("BUTTON");
-        cardInfo.setAttribute("data-card-layout", "");
 
         const cardTitle = document.createElement("H2");
         const cardPrice = document.createElement("H3");
@@ -54,34 +84,33 @@ function setCard(list) {
         cardInfo.appendChild(cardTitle);
         cardInfo.appendChild(cardPrice);
         cardInfo.appendChild(cardDescription);
+        cardInfo.setAttribute("data-card-layout", "");
 
         cardBoard.appendChild(cardInfo);
         return;
     });
 }
+//  adicionar novo item a lista atual
 
-// adicionar novo lista
+function setNewItem(list) {
+    document.querySelector("[data-card-board]")
 
-document.querySelector("[data-new-favorite]").onclick = () => {
-    console.log("new list");
-    const newFavorite = {
-        name: prompt("name new favorite"),
-        value: [],
+    // name: prompt("name new favorite"),
+    // value: [],
+    document.querySelector("[data-new-item]").onclick = () => {
+        console.log("new item");
+
+        if (cardBoard.innerText !== "") {
+
+            const newItem = {
+                title: prompt("TÍTULO"),
+                price: prompt("PREÇO"),
+                description: prompt("DESCRIÇÃO"),
+            };
+            currentList.innerText = "Selecione uma lista"
+        }
+        currentList.push(newItem);
+        setCard(newListFavorites);
+        return;
     };
-    favorites.push(newFavorite);
-    setButton(favorites);
-    return;
-};
-// remover a lista atual
-
-const newListFavorites = favorites
-document.querySelector("[data-remove-favorite]").onclick = () => {
-    console.log("remove list");
-    const removeFavorite = prompt("name remove favorite");
-
-    const filteredFavorites = newListFavorites.filter(function(el) {
-        return el.name !== removeFavorite;
-    });
-
-    setButton(filteredFavorites);
-};
+}
