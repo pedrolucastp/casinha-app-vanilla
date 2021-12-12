@@ -78,7 +78,7 @@ function setCard(list) {
         const cardDescription = document.createElement("P");
 
         cardTitle.innerText = card.title;
-        cardPrice.innerText = card.price;
+        cardPrice.innerText = "R$" + card.price;
         cardDescription.innerText = card.description;;
 
         cardInfo.appendChild(cardTitle);
