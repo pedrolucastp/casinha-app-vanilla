@@ -14,6 +14,8 @@ console.log("Casinha App");
 }
 
 let newListFavorites = favorites;
+let currentList = ""
+
 console.log("newListFavorites", newListFavorites)
 
 // Criar os botoes de favoritos  
@@ -26,7 +28,7 @@ function setFavorites(lists) {
         button.innerText = list.name;
         button.setAttribute("id", list.name);
         button.onclick = () => {
-            console.log(list)
+            currentList = list
             setCard(list);
         };
 
@@ -67,8 +69,7 @@ document.querySelector("[data-remove-favorite]").onclick = () => {
 function setCard(list) {
     const cardBoard = document.querySelector("[data-card-board]");
     cardBoard.innerText = "";
-    console.log(list.name)
-    cardBoard.setAttribute("data-card-board", "")
+    cardBoard.setAttribute("data-card-board", list.name)
     list.value.forEach((card) => {
         const cardInfo = document.createElement("BUTTON");
 
@@ -78,33 +79,37 @@ function setCard(list) {
 
         cardTitle.innerText = card.title;
         cardPrice.innerText = card.price;
-        cardDescription.innerText = card.description;
+        cardDescription.innerText = card.description;;
 
         cardInfo.appendChild(cardTitle);
         cardInfo.appendChild(cardPrice);
         cardInfo.appendChild(cardDescription);
-        cardInfo.setAttribute("data-card-layout", "");
+        cardInfo.setAttribute("data-card-layout", card.title);
 
         cardBoard.appendChild(cardInfo);
-        return;
+
     });
 }
 
 // funçao criar novo item
-function handleNewItem() {
-    const currentList = document.querySelector("[data-card-doard]")
+//  adicionar novo item a lista atual
+
+
+document.querySelector("[data-new-item]").onclick = () => {
+    console.log("new item");
     const newItem = {
         title: prompt("TÍTULO"),
         price: prompt("PREÇO"),
         description: prompt("DESCRIÇÃO"),
     };
-}
-
-//  adicionar novo item a lista atual
-
-document.querySelector("[data-new-item]").onclick = () => {
-    console.log("new item");
     console.log(newItem)
+    console.log(currentList)
+    currentList.value.push(newItem)
+    console.log(currentList)
+    setCard(currentList)
+    newListFavorites.push(currentList)
+    console.log(newListFavorites)
+
 
     return;
 };
