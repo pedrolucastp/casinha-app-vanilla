@@ -2,23 +2,22 @@ import favorites from "./favorites.js";
 console.log("Casinha App");
 
 //trocar o backgroud a cada click no header
-{
-    document.querySelector("[data-theme-changer]").onclick = function(e) {
-        if (e) {
-            document.body.style.backgroundColor = "#0cbaba";
-            document.body.style.backgroundImage =
-                "linear-gradient(315de g, #0cbaba 0%, #380036 74%)";
-            return;
-        }
-    };
-}
+
+document.querySelector("[data-theme-changer]").onclick = function(e) {
+    if (e) {
+        document.body.style.backgroundColor = "#0cbaba";
+        document.body.style.backgroundImage =
+            "linear-gradient(315de g, #0cbaba 0%, #380036 74%)";
+        return;
+    }
+};
 
 let newListFavorites = favorites;
-let currentList = ""
+let currentList = "";
 
-console.log("newListFavorites", newListFavorites)
+console.log("newListFavorites", newListFavorites);
 
-// Criar os botoes de favoritos  
+// Criar os botoes de favoritos
 
 function setFavorites(lists) {
     const favoriteContainer = document.querySelector("[data-favorite-container]");
@@ -28,7 +27,7 @@ function setFavorites(lists) {
         button.innerText = list.name;
         button.setAttribute("id", list.name);
         button.onclick = () => {
-            currentList = list
+            currentList = list;
             setCard(list);
         };
 
@@ -62,14 +61,13 @@ document.querySelector("[data-remove-favorite]").onclick = () => {
     setFavorites(newListFavorites);
 };
 
-
 // criar uma função que recebe uma lista (array)
 // e tranforme os elemtneos em algo visual (cards)
 
 function setCard(list) {
     const cardBoard = document.querySelector("[data-card-board]");
     cardBoard.innerText = "";
-    cardBoard.setAttribute("data-card-board", list.name)
+    cardBoard.setAttribute("data-card-board", list.name);
     list.value.forEach((card) => {
         const cardInfo = document.createElement("BUTTON");
 
@@ -79,7 +77,7 @@ function setCard(list) {
 
         cardTitle.innerText = card.title;
         cardPrice.innerText = "R$" + card.price;
-        cardDescription.innerText = card.description;;
+        cardDescription.innerText = card.description;
 
         cardInfo.appendChild(cardTitle);
         cardInfo.appendChild(cardPrice);
@@ -87,13 +85,11 @@ function setCard(list) {
         cardInfo.setAttribute("data-card-layout", card.title);
 
         cardBoard.appendChild(cardInfo);
-
     });
 }
 
 // funçao criar novo item
 //  adicionar novo item a lista atual
-
 
 document.querySelector("[data-new-item]").onclick = () => {
     console.log("new item");
@@ -102,14 +98,13 @@ document.querySelector("[data-new-item]").onclick = () => {
         price: prompt("PREÇO"),
         description: prompt("DESCRIÇÃO"),
     };
-    console.log(newItem)
-    console.log(currentList)
-    currentList.value.push(newItem)
-    console.log(currentList)
-    setCard(currentList)
-    newListFavorites.push(currentList)
-    console.log(newListFavorites)
-
+    console.log(newItem);
+    console.log(currentList);
+    currentList.value.push(newItem);
+    console.log(currentList);
+    setCard(currentList);
+    newListFavorites.push(currentList);
+    console.log(newListFavorites);
 
     return;
 };
